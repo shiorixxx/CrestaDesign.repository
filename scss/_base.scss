@@ -1,0 +1,137 @@
+@use "config/responsive" as r;
+@use "common" as c;
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth; //スムーズスクロール
+}
+
+body {
+  width: 100%;
+  font-weight: 400;
+  height: 1.6;
+  color: c.$text-color;
+  font-family: "Montserrat", "sans-serif";
+  font-family: "Noto Sans JP", sans-serif;
+  letter-spacing: 0.05em;
+}
+p {
+  font-size: 1.6rem;
+}
+.wrapper {
+  max-width: 980px;
+  text-align: center;
+  margin: 0 auto;
+  padding-right: 10px; /* 3 */
+  padding-left: 10px; /* 3 */
+
+  @include r.mq(sp) {
+    padding: 0 3%;
+  }
+}
+.container-wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+img {
+  width: 100%;
+}
+
+.section-title {
+  font-size: 60px;
+  font-family: c.$font-en;
+  align-items: center;
+  display: flex;
+  justify-content: left;
+  font-style: italic;
+  margin-bottom: 70px;
+  letter-spacing: 0.05em;
+
+  &::after {
+    content: "";
+    width: 200px;
+    background-color: c.$main-color;
+    height: 3px;
+    margin-left: 20px;
+  }
+  @include r.mq(sp) {
+    font-size: 3rem;
+  }
+}
+
+.section-title_white {
+  font-size: 60px;
+  font-family: c.$font-en;
+  align-items: center;
+  display: flex;
+  justify-content: left;
+  font-style: italic;
+  margin-bottom: 70px;
+  letter-spacing: 0.05em;
+  color: #fff;
+
+  &::after {
+    content: "";
+    width: 200px;
+    background-color: #fff;
+    height: 3px;
+    margin-left: 20px;
+  }
+  @include r.mq(sp) {
+    font-size: 3rem;
+  }
+}
+
+.section-title_bottom-white {
+  font-size: 9rem;
+  letter-spacing: 0.05em;
+  opacity: 0.2;
+  font-family: c.$font-en;
+  color: #fff;
+  margin-bottom: 70px;
+  display: flex;
+  justify-content: left;
+
+  @include r.mq(sp) {
+    font-size: 4rem;
+  }
+}
+.section-title_bottom {
+  font-size: 9rem;
+  letter-spacing: 0.05em;
+  opacity: 0.5;
+  font-family: c.$font-en;
+  color: rgb(23, 23, 23, 0.2);
+  margin-bottom: 70px;
+  display: flex;
+  justify-content: left;
+  @include r.mq(sp) {
+    font-size: 4rem;
+  }
+}
+
+.right {
+  justify-content: right;
+}
+
+.button {
+  background-color: #f7d43f;
+  width: 235px;
+  padding: 16px 0;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: c.$text-color;
+  border-radius: 35px;
+  transition: all 0.5s ease;
+  border: 5px solid #f7d43f;
+  font-family: c.$font-en;
+  margin: 0 auto;
+  margin-bottom: 70px;
+
+  &:hover {
+    background: #fff;
+  }
+}

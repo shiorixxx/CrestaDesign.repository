@@ -1,0 +1,144 @@
+@use "config/responsive" as r;
+@use "common" as c;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0px;
+  z-index: 30;
+  height: 70px;
+  width: 100%;
+  padding: 19px 0;
+
+  .header-nav {
+    position: relative;
+    height: inherit;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h1 {
+      color: #fff;
+      font-size: 2.6rem;
+      font-family: c.$font-en;
+    }
+    .nav-items {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      color: #fff;
+      font-size: 1.6rem;
+      font-family: c.$font-en;
+      letter-spacing: 0.05em;
+
+      @include r.mq(sp) {
+        display: none;
+      }
+
+      .nav-item {
+        margin-right: 30px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+.js-header-color {
+  background-color: c.$main-color;
+  transition: 0.3s;
+}
+
+// hamburger menu
+.hamburger-menu {
+  position: absolute;
+  display: flex;
+  right: 20px;
+  top: 20px;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  z-index: 999;
+  border: 1px solid #fff;
+
+  @include r.mq(pc) {
+    display: none;
+  }
+  .menu-btn_burger {
+    width: 50px;
+    height: 6px;
+    background: #fff;
+    border-radius: 5px;
+    transition: all 0.5s ease-in-out;
+    box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      width: 50px;
+      height: 6px;
+      background: #fff;
+      border-radius: 5px;
+      transition: all 0.5s ease-in-out;
+      box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+    }
+    &::before {
+      transform: translateY(-16px);
+    }
+    &::after {
+      transform: translateY(16px);
+    }
+  }
+}
+
+// .active {
+// }
+.hamburger-nav {
+  width: 100%;
+  height: 100vh;
+  background-color: c.$main-color;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  text-align: center;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+  visibility: hidden;
+  z-index: 800;
+
+  .nav-container {
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 800;
+
+    li {
+      margin-bottom: 30px;
+      width: 100%;
+
+      a {
+        color: #fff;
+        font-weight: bold;
+        font-size: 16px;
+        font-family: c.$font-en;
+        font-style: italic;
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+      }
+    }
+  }
+}
+.hamburger-nav.active {
+  opacity: 1;
+  visibility: visible;
+}

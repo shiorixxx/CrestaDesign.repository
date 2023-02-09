@@ -1,0 +1,24 @@
+@use "config/responsive" as r;
+@use "common" as c;
+
+.works {
+  padding: 104px 0 70px;
+  background-image: url(../img/works-bgi@2x.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .works-item_text {
+    font-size: 1.6rem;
+    line-height: 1.8;
+    text-align: left;
+    padding: 25px;
+    background-color: #fff;
+    height: 134px;
+  }
+  .works-items {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    margin-bottom: 80px;
+  }
+}

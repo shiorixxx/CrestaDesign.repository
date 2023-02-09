@@ -1,0 +1,63 @@
+@use "config/responsive" as r;
+@use "common" as c;
+
+.contact {
+  padding: 109px 0 70px;
+  background-image: url(../img/contact-bgi@2x.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  .contact-text {
+    font-size: 2rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 40px;
+    color: #fff;
+  }
+}
+.contact-mainvisual {
+  height: 453px;
+  background-image: url(../img/contact-bgi@2x.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 60px;
+
+  .contact-title {
+    font-size: 60px;
+    font-family: c.$font-en;
+
+    font-style: italic;
+    margin-bottom: 70px;
+    letter-spacing: 0.05em;
+    color: #fff;
+  }
+  .section-title_bottom-white {
+    position: absolute;
+    bottom: 20px;
+    left: 50px;
+  }
+}
+.form-item {
+  margin: 0 auto;
+  max-width: 700px;
+  text-align: left;
+  margin-bottom: 25px;
+
+  .contact-item {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 3px;
+  }
+  .form-text {
+    width: 100%;
+    border: 1px solid;
+    padding: 5px 0;
+  }
+  .form-textarea {
+    width: 100%;
+    border: 1px solid;
+    height: 170px;
+  }
+}

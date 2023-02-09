@@ -1,0 +1,67 @@
+@use "config/responsive" as r;
+@use "common" as c;
+
+.service {
+  padding: 100px 0 0;
+
+  .service-items {
+    margin-bottom: 70px;
+    display: grid;
+    gap: 0;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    @include r.mq(sp) {
+      gap: 20px;
+    }
+    .service-text {
+      position: absolute;
+      font-size: 4rem;
+      font-family: c.$font-en;
+      font-style: italic;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      letter-spacing: 0.05em;
+
+      width: 100%;
+    }
+    .service-item-1 {
+      position: relative;
+      transition: all 0.5 ease;
+      background-image: url(../img/service-img01@2x.jpg);
+      background-repeat: no-repeat;
+      padding: 132px 0;
+      background-size: cover;
+    }
+    .service-item-2 {
+      position: relative;
+
+      background-image: url(../img/service-img02@2x.jpg);
+      background-repeat: no-repeat;
+      padding: 132px 0;
+      background-size: cover;
+    }
+    .service-item-3 {
+      position: relative;
+
+      background-image: url(../img/sevice-img03@2x.jpg);
+      background-repeat: no-repeat;
+      padding: 132px 0;
+      background-size: cover;
+    }
+  }
+  .dark-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    opacity: 0.3;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: black;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@use "config/responsive" as r;
+@use "common" as c;
+.concept {
+  .concept-title {
+    font-size: 3rem;
+    font-weight: bold;
+
+    margin: 0 auto 60px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    line-height: 1.66;
+    @include r.mq(sp) {
+      font-size: 2rem;
+    }
+  }
+  .concept-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 70px;
+    .concept-item {
+      width: 440px;
+      font-size: 1.6rem;
+      font-weight: bold;
+      letter-spacing: 0.05;
+      line-height: 1.85;
+      @include r.mq(sp) {
+        margin-bottom: 30px;
+      }
+    }
+    @include r.mq(sp) {
+      flex-direction: column;
+    }
+  }
+}
